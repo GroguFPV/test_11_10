@@ -26,7 +26,15 @@ namespace test
             InitializeComponent();
             TitleTb.Text = product.Title;
             CostTb.Text = product.Cost.ToString("N0");
-            ;
+            //CostTb.Text = product.CostDiscount;
+            DisTb.Text = product.DiscountStr;
+            CostTb.Visibility = product.GetVisibility;
+            CostDtb.Text = product.CostDiscount.ToString("N0");
+
+
+
+
+
         }
     }
 }

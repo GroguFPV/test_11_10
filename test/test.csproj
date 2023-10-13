@@ -82,6 +82,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Comp\PartialClass\Feedback.cs" />
+    <Compile Include="Comp\PartialClass\Product.cs" />
     <Compile Include="Comp\Product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
