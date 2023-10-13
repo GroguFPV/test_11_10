@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="test.UserControl"
+﻿<UserControl x:Class="test.ProductUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:test"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="300">
-    <Grid>
+                         d:DesignHeight="400" d:DesignWidth="300">
+    <Grid Background="#FFD8D8D8">
         <Grid.RowDefinitions>
             <RowDefinition Height="90*" />
             <RowDefinition Height="15*" />
@@ -17,13 +17,14 @@
         <TextBlock Grid.Row="1" x:Name="TitleTb"/>
         <StackPanel Grid.Row ="2" Grid.Column="1" Orientation="Horizontal">
             <TextBlock x:Name="CostTb"></TextBlock>
-            <TextBlock x:Name="CostTimeTb"></TextBlock>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-            <Button Height="25" Width="50" Background="#FFFD4242">🛒</Button>
-            <Button Height="25" Width="25" Background="White">💗</Button>
-            <Button Height="25" Width="25" Background="White" Content="📊"/>
+            <Button Height="35" Width="70" Background="#FFFD4242">🛒</Button>
+            <Button Height="35" Width="35" Background="White">💗</Button>
+            <Button Height="35" Width="35" Background="White" Content="📊"/>
         </StackPanel>
     </Grid>
+
+
 </UserControl>

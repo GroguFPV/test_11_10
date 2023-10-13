@@ -12,17 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using test.Comp;
 
 namespace test
 {
     /// <summary>
-    /// Логика взаимодействия для UserControl.xaml
+    /// Логика взаимодействия для ProductUC.xaml
     /// </summary>
-    public partial class UserControl : UserControl
+    public partial class ProductUC : UserControl
     {
-        public UserControl()
+        public ProductUC(Product product)
         {
             InitializeComponent();
+            TitleTb.Text = product.Title;
+            CostTb.Text = product.Cost.ToString("N0");
+            ;
         }
     }
 }

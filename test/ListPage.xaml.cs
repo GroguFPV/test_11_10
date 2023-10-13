@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using test.Comp;
 
 namespace test
 {
@@ -23,6 +24,11 @@ namespace test
         public ListPage()
         {
             InitializeComponent();
+            IEnumerable<Product> ProductList = App.db.Product;
+            foreach (var product in ProductList)
+            {
+                ProductWP.Children.Add(new ProductUC(product));
+            }
         }
     }
 }
