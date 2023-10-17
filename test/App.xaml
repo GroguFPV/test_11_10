@@ -10,5 +10,7 @@
             <Setter Property="FontSize" Value="14"></Setter>
             <Setter Property="Foreground" Value="Black"></Setter>
         </Style>
+       
+
     </Application.Resources>
 </Application>

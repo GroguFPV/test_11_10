@@ -38,6 +38,22 @@ namespace test.Comp
                 }
             }
         }
+        public string costTimeStr
+        {
+            get
+            {
+                if (Discount == 0)
+                {
+                    return Cost.ToString("N0");
+                }
+                else
+                {
+                    return $"{CostDiscount:0}₽ ";
+                }
+            }
+        }
+
+
         public Visibility GetVisibility
         {
             get
@@ -45,13 +61,11 @@ namespace test.Comp
                 if (Discount == 0)
                 {
                     return Visibility.Collapsed;
-
                 }
 
                 else
                 {
-                    
-                    return Visibility.Visible; 
+                    return Visibility.Visible;
                 }
             }
         }

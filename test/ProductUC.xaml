@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:test"
              mc:Ignorable="d" 
                          d:DesignHeight="400" d:DesignWidth="300">
-    <Grid Background="#FFFFF8F8">
+    <Grid Background="White">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -14,10 +14,10 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="90*" />
+            <RowDefinition Height="190*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="25*" />
             <RowDefinition Height="15*" />
+            <RowDefinition Height="35*" />
         </Grid.RowDefinitions>
         <Image Margin="5" x:Name="ImageImg" Grid.Column="1" Grid.RowSpan="1" Height="250" Width="270"
                Source="res\image.jpg"/>
@@ -26,18 +26,18 @@
                    x:Name="DisTb" Background="#FF18FFFA" FontWeight="Bold"></TextBlock>
 
         <TextBlock Grid.Column="1" Grid.Row="1" x:Name="TitleTb"></TextBlock>
-        <StackPanel Grid.Row ="2" Grid.Column="1">
+        <StackPanel Orientation="Horizontal" Grid.Row ="2" Grid.Column="1">
 
-            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="FeedbackTb"></TextBlock>
-            <TextBlock HorizontalAlignment="Left"  VerticalAlignment="Center"  x:Name="CostTb"></TextBlock>
-            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"  x:Name="CostDtb"></TextBlock>
-            
+            <TextBlock HorizontalAlignment="Left" x:Name="FeedbackTb"></TextBlock>
+            <TextBlock HorizontalAlignment="Left" x:Name="CostDtb" FontWeight="Bold"></TextBlock>
+            <TextBlock VerticalAlignment="Bottom" TextDecorations="Strikethrough" HorizontalAlignment="Left" x:Name="CostTb" FontSize="11" Foreground="#FF5B5B5B"/>
+            <TextBlock HorizontalAlignment="Left" ></TextBlock>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-            <Button  Height="35" Width="70" Background="#FFFD4242">🛒</Button>
-            <Button Height="35" Width="35" Background="White">💗</Button>
-            <Button Height="35" Width="35" Background="White" Content="📊"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="1">
+            <Button BorderThickness="0" Height="35" Width="70" Background="#FFFF3A3A" Cursor="" >🛒</Button>
+            <Button BorderThickness="0" Height="35" Width="35" Background="White">💗</Button>
+            <Button BorderThickness="0" Height="35" Width="35" Background="White" Content="📊"/>
         </StackPanel>
     </Grid>
 
