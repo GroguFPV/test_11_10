@@ -6,11 +6,12 @@
     <Application.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value ="Comic Sans MS"></Setter>
-            
+
             <Setter Property="FontSize" Value="14"></Setter>
             <Setter Property="Foreground" Value="Black"></Setter>
         </Style>
-       
-
+        <Style x:Key="MyBorderStyle" TargetType="Border">
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
     </Application.Resources>
 </Application>

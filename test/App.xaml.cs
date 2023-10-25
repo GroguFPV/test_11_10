@@ -15,6 +15,6 @@ namespace test
     public partial class App : Application
     {
         static public HardwareShopEntities db = new HardwareShopEntities();
-        
+        public static bool isAdmin = false;
     }
 }

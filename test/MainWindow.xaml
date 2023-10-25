@@ -5,9 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:test"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="800">
+        Title="MainWindow" Height="500" Width="615">
     <Grid>
-        <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame"></Frame>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="500*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="400*"/>
+        </Grid.RowDefinitions>
+        <StackPanel  Grid.Row="0" Grid.Column="1" Background="Black" >
+            <TextBlock HorizontalAlignment="Center" 
+                       Foreground="White" FontSize="16"
+                       FontWeight="Bold" VerticalAlignment="Bottom">Магазин</TextBlock>
+        </StackPanel>
 
+        <Rectangle Grid.Row="0" Grid.Column="0" Fill="Black"></Rectangle>
+        <Rectangle Grid.Row="0" Grid.Column="2" Fill="Black"></Rectangle>
+        <Frame Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"
+               x:Name="MainFrame"></Frame>
+        
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+            
+            <Button Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"
+                HorizontalAlignment="Left" Background="White"
+                Width="50"
+                FontWeight="Bold" BorderBrush="White" 
+                >Назад</Button>
+            <Rectangle Grid.Row="0"  Grid.Column="0" Width="10" Fill="Black"></Rectangle>
+            
+            <Button Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"
+                HorizontalAlignment="Left" Background="White" 
+                Width="50"
+                FontWeight="Bold" BorderBrush="White"
+            >Выход</Button>
+        </StackPanel>
+        
     </Grid>
 </Window>

@@ -21,9 +21,15 @@ namespace test
     /// </summary>
     public partial class ProductUC : UserControl
     {
+        private Product product;
         public ProductUC(Product product)
         {
             InitializeComponent();
+            if (App.isAdmin == false)
+            {
+                DelBut.Visibility = Visibility.Collapsed;
+            }
+           
             TitleTb.Text = product.Title;
             CostTb.Text = product.Cost.ToString("N0");
             
@@ -31,6 +37,14 @@ namespace test
             CostTb.Visibility = product.GetVisibility;
             CostDtb.Text = product.costTimeStr;
 
+
+        }
+
+        private void DelBut_Click(object sender, RoutedEventArgs e)
+        {
+            App.db.Product.Remove(product);
+            App.db.SaveChanges();
+            
 
         }
     }

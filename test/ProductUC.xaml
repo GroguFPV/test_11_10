@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:test"
              mc:Ignorable="d" 
-                         d:DesignHeight="400" d:DesignWidth="300">
+                         d:DesignHeight="420" d:DesignWidth="300">
     <Grid Background="White">
 
         <Grid.ColumnDefinitions>
@@ -15,9 +15,10 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="190*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="15*" />
             <RowDefinition Height="15*" />
             <RowDefinition Height="35*" />
+            <RowDefinition Height="20*" />
         </Grid.RowDefinitions>
         <Image Margin="5" x:Name="ImageImg" Grid.Column="1" Grid.RowSpan="1" Height="250" Width="270"
                Source="res\image.jpg"/>
@@ -28,8 +29,8 @@
         <TextBlock Grid.Column="1" Grid.Row="1" x:Name="TitleTb"></TextBlock>
         <StackPanel Orientation="Horizontal" Grid.Row ="2" Grid.Column="1">
 
-            <TextBlock HorizontalAlignment="Left" x:Name="FeedbackTb"></TextBlock>
-            <TextBlock HorizontalAlignment="Left" x:Name="CostDtb" FontWeight="Bold"></TextBlock>
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="FeedbackTb"></TextBlock>
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="CostDtb" FontWeight="Bold"></TextBlock>
             <TextBlock VerticalAlignment="Bottom" TextDecorations="Strikethrough" HorizontalAlignment="Left" x:Name="CostTb" FontSize="11" Foreground="#FF5B5B5B"/>
             <TextBlock HorizontalAlignment="Left" ></TextBlock>
         </StackPanel>
@@ -38,7 +39,13 @@
             <Button BorderThickness="0" Height="35" Width="70" Background="#FFFF3A3A" Cursor="" >🛒</Button>
             <Button BorderThickness="0" Height="35" Width="35" Background="White">💗</Button>
             <Button BorderThickness="0" Height="35" Width="35" Background="White" Content="📊"/>
+            
         </StackPanel>
+        <Button  Grid.Row="3" Grid.Column="1" 
+                 VerticalAlignment="Bottom" x:Name="DelBut"
+                 HorizontalAlignment="Right" Height="35" Width="105" 
+                 Foreground="White" Background="White" Click="DelBut_Click">Удалить товар</Button>
+
     </Grid>
 
 

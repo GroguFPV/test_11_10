@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using test.Comp;
+using test.Comp.Pages;
 
 namespace test
 {
@@ -24,11 +25,21 @@ namespace test
         public ListPage()
         {
             InitializeComponent();
+            if (App.isAdmin == false)
+            {
+                AddBut.Visibility = Visibility.Collapsed;
+            }
+            
             IEnumerable<Product> ProductList = App.db.Product;
             foreach (var product in ProductList)
             {
                 ProductWP.Children.Add(new ProductUC(product));
             }
+        }
+
+        private void AddBut_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddProduct());
         }
     }
 }

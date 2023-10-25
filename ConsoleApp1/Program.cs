@@ -12,71 +12,71 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите количество уравнений: ");
+            Console.Write("Введите кол-во переменных = ");
             int n = int.Parse(Console.ReadLine());
-
-            double[,] coefficientMatrix = new double[n, n];
-            double[] constantTerms = new double[n];
-            double[] initialSolution = new double[n];
-            double[] solution = new double[n];
-
-
-            Console.WriteLine("Введите коэффициенты матрицы:");
+            double[,] A = new double[n, n + 1];
+            Console.WriteLine("Введите значения");
             for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < n; j++)
+                for (int j = 0; j < n + 1; j++)
                 {
-                    coefficientMatrix[i, j] = double.Parse(Console.ReadLine());
+                    A[i, j] = double.Parse(Console.ReadLine());
                 }
+                Console.WriteLine();
             }
 
+            double[] result = SolveUsingSeidelMethod(A, n);
 
-            Console.WriteLine("Введите свободные члены:");
+            Console.WriteLine("Решение");
             for (int i = 0; i < n; i++)
             {
-                constantTerms[i] = double.Parse(Console.ReadLine());
+                Console.WriteLine($"x{i + 1} = {result[i].ToString("N3")}");
             }
+        }
 
+        static double[] SolveUsingSeidelMethod(double[,] A, int n)
+        {
+            const int maxIterations = 1000;
+            const double epsilon = 0.0001;
+            double[] x = new double[n];
+            double[] xPrev = new double[n];
 
-            Console.WriteLine("Введите начальное приближение:");
             for (int i = 0; i < n; i++)
             {
-                initialSolution[i] = double.Parse(Console.ReadLine());
+                x[i] = 0;
             }
 
-
-            Console.WriteLine("Введите количество итераций:");
-            int iterations = int.Parse(Console.ReadLine());
-
-
-            for (int iter = 0; iter < iterations; iter++)
+            int iterations = 0;
+            double error = 0;
+            do
             {
+                Array.Copy(x, xPrev, n);
                 for (int i = 0; i < n; i++)
                 {
-                    double sum = 0.0;
+                    double sum = 0;
                     for (int j = 0; j < n; j++)
                     {
-                        if (i != j)
+                        if (j != i)
                         {
-                            sum += coefficientMatrix[i, j] * initialSolution[j];
+                            sum += A[i, j] * x[j];
                         }
                     }
-                    solution[i] = (constantTerms[i] - sum) / coefficientMatrix[i, i];
+
+                    x[i] = (A[i, n] - sum) / A[i, i];
                 }
-
-
+                error = 0;
                 for (int i = 0; i < n; i++)
                 {
-                    initialSolution[i] = solution[i];
+                    double diff = Math.Abs(x[i] - xPrev[i]);
+                    if (diff > error)
+                    {
+                        error = diff;
+                    }
                 }
+                iterations++;
             }
-
-
-            Console.WriteLine("Решение системы:");
-            for (int i = 0; i < n; i++)
-            {
-                Console.WriteLine($"x{i + 1} = {solution[i]}");
-            }
+            while (error > epsilon && iterations < maxIterations);
+            return x;
         }
     }
 }

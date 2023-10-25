@@ -1,0 +1,33 @@
+﻿<Page x:Class="test.Comp.Pages.Autoriz"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:test.Comp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="500"
+      Title="Autoriz">
+
+        <Grid Background="White" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock FontWeight="Bold">Вход для админов(0000) </TextBlock>
+            <PasswordBox  x:Name="PasswordTb"  Margin="5" Height="20" Background="{x:Null}"></PasswordBox>
+                <Button Background="White" Foreground="White" 
+                        BorderBrush="Black"
+                        Click="Button_Click_Admin">Войти</Button>
+            </StackPanel>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock FontWeight="Bold">Вход для пользователей</TextBlock>
+            
+            <Button Background="White" Foreground="White"
+                    BorderBrush="Black"
+                    Click="Button_Click">Войти</Button>
+        </StackPanel>
+    </Grid>
+</Page>

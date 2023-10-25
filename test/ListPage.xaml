@@ -5,20 +5,31 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:test"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="615"
       Title="ListPage">
 
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="61*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Visible"
+        <ScrollViewer Grid.Row="1" Grid.Column="1" HorizontalScrollBarVisibility="Visible"
                 VerticalScrollBarVisibility="Disabled">
             <WrapPanel x:Name="ProductWP"/>
         </ScrollViewer>
+
+
+        <Button Grid.Row="2" Grid.Column="1" Background="White" 
+                Width="120" BorderBrush="Black" x:Name="AddBut"
+                Height="30" HorizontalAlignment="Left"
+                FontWeight="Bold" Click="AddBut_Click">Добавить товар</Button>
     </Grid>
 </Page>
